@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Star Citizen Hangar Histogram",
+    "version": "1.0",
+    "description": "This extension will create a histogram of your Star Citizen hangar.",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://www.robertsspaceindustries.com/*", "https://www.robertsspaceindustries.com/*",
+        "http://robertsspaceindustries.com/*", "https://robertsspaceindustries.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["content.js"],
+            "matches": [
+                "http://www.robertsspaceindustries.com/*", "https://www.robertsspaceindustries.com/*",
+                "http://robertsspaceindustries.com/*", "https://robertsspaceindustries.com/*"
+            ]
+        }
+    ]
+}
