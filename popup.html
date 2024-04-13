@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Star Citizen Histogram</title>
-    <script src="popup.js"></script>
-    <!-- script src="js/chart.umd.min.js"></script>
-    <script src="js/chartjs-adapter-moment.min.js"></script-->
+    <link rel="stylesheet" href="styles/popup.css">
 </head>
 <body>
-    <h1>My Star Citizen Histogram</h1>
-    <button id="parse">Create my Histogram</button>
-    <div id="ordersTable"></div>
-    <!--canvas id="myChart"></canvas-->
+    <h1>RSI-Histogram</h1>
+    <label for="parse">Click the button below to create your histogram:</label>
+    <button id="parse" type="button">Create my Histogram</button>
+    <div id="status"></div>
+    <label for="optionsButton">Change your chart options:</label>
+    <button id="optionsButton" type="button">Options</button>
+
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/chart.umd.min.js"></script>
 </body>
 </html>
