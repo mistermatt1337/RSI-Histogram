@@ -37,3 +37,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         });
     }
 });
+// Listen for resetButton click
+document.getElementById('resetButton').addEventListener('click', function() {
+    chrome.runtime.sendMessage({action: 'resetData'});
+    document.getElementById('status').textContent = 'Data reset started';
+});
