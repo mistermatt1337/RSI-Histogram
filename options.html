@@ -7,13 +7,58 @@
     <style>
         /* Add your custom CSS styles here */
     </style>
+    <link rel="stylesheet" href="styles/options.css">
 </head>
 <body>
-    <h1>Extension Options</h1>
-    
-    <form>
-        <!-- Add your options fields here -->
-    </form>
+    <div id="appArea" class="appArea">
+        <h1>Extension Options</h1>
+            <form><div class="optionsForm">
+                <p>Customize the chart appearance and data:</p>
+                <label for="chartTitle">Chart Title:</label>
+                <input type="text" id="chartTitle" name="chartTitle">
+                <br>
+                <label for="showTitle">Show Title:</label>
+                <input type="checkbox" id="showTitle" name="showTitle" checked>
+                <br>
+                <label for="showAxisLabels">Show Axis Labels:</label>
+                <input type="checkbox" id="showAxisLabels" name="showAxisLabels" checked>
+                <br>
+                <label for="showValues">Show Values:</label>
+                <input type="checkbox" id="showValues" name="showValues" checked>
+                <br>
+                <label for="showTickmarks">Show Tickmarks:</label>
+                <input type="checkbox" id="showTickmarks" name="showTickmarks" checked>
+                <br>
+                <label for="chartType">Chart Type:</label>
+                <select id="chartType" name="chartType">
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="pie">Pie Chart</option>
+                </select>
+                <br>
+                <label for="chartColor">Chart Color:</label>
+                <input type="color" id="chartColor" name="chartColor">
+                <br>
+                <label for="timeMeasure">Time Measure:</label>
+                <select id="timeMeasure" name="timeMeasure">
+                    <option value="month">Month</option>
+                    <option value="quarter">Quarter</option>
+                    <option value="year">Year</option>
+                </select>
+                <br>
+                <button type="submit" id="saveOptionsButton">Save</button>
+                <button type="reset" id="resetButton">Reset</button>
+            </form></div>
+        <div id="statusLog" class="optionsLog">
+            <textarea class="statusLog"></textarea>
+        </div>
+
+    </div>
+
+    <script src="scripts/options.js"></script>
+    <script>
+        document.getElementById('saveOptionsButton').addEventListener('click', save_options);
+    </script>
     
 </body>
 </html>

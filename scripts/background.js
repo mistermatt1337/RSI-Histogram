@@ -107,3 +107,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     // Handle other actions...
 });
+
+// Set the default options when the extension is installed
+chrome.runtime.onInstalled.addListener(function(details) {
+    if (details.reason == "install") {
+        var defaultOptions = {
+            chartType: 'line', // default chart type
+            showTitle: true, // default to show title
+            showAxisLabels: true, // default to show axis labels
+            showValues: true, // default to show values
+            showTickmarks: true, // default to show tickmarks
+            timeMeasure: 'month' // default time measure
+        };
+        chrome.storage.sync.set({options: defaultOptions}, function() {
+            console.log('Default options set.');
+        });
+    }
+});
